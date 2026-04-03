@@ -1,0 +1,102 @@
+#contactForm{
+padding: 7rem;
+    .heading{
+h3{
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: bold;
+    color: #00917c;
+    margin-bottom: 15px;
+}
+p{
+    color: rgba(0, 0, 0, 0.5) !important;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+    }
+    .form{
+        label{
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+             font-family: "Roboto", sans-serif;
+
+            font-size: 14px;
+        }
+        .inpDiv{
+          
+            .form-control{
+                padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 30px;
+    border-color: transparent;
+    height: 52px;
+    background: #f8f9fa !important;
+            }
+        }
+        .msgDiv{
+            textarea{
+                padding-left: 15px;
+                padding-right: 15px;
+                height: 250px;
+                border-color: transparent;
+                background: #f8f9fa !important;
+            }
+        }
+        #sendBtn{
+            color: #fff;
+    background-color: #00917c;
+    padding: 15px 30px;
+    border-radius: 30px;
+    border-color: none;
+    font-size: 14px;
+        }
+    }
+}
+#contactTable{
+    .search{
+        width: 50%;
+        margin-bottom: 15px;
+        input{
+            padding-left: 15px;
+            padding-right: 15px;
+            border-radius: 30px;
+            border-color: transparent;
+            height: 52px;
+            background: #f8f9fa !important;
+        }
+    }
+    table,tr,th,td{
+        border: 1px solid rgb(175, 169, 169);
+        border-collapse: collapse;
+    }
+    .buttons{
+        display: flex;
+        border: none;
+        gap: 15px;
+        button{
+            width: 80px;
+            padding: 5px 10px ;
+            border-radius: 20px;
+            background-color: #00917c;
+        }
+    }
+    .btns{
+        display: flex;
+        button{
+            width: 100px;
+            padding: 5px 10px ;
+            border-radius: 20px;
+            background-color: #00917c;
+        }
+        select{
+            // width: 100px;
+            padding: 5px 10px ;
+            border-radius: 20px;
+            background-color: #00917c;
+            option{
+                background-color: #f8f9fa;
+            }
+        }
+    }
+}
