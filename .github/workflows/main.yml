@@ -1,0 +1,17 @@
+name: Hotel Project Pipeline
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  check-files:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Kodu GitHub-dan gotur
+        uses: actions/checkout@v4
+
+      - name: Fayllari siyahiya sal
+        run: |
+          echo "Pipeline isleyir. Fayllar yoxlanilir..."
+          ls -R
