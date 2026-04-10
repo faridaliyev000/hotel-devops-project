@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Bootstrap  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- main css -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <div class="row g-0 align-items-center">
+                    <div class="col-2">
+                        <div class="logo">
+                            <a href="index.html">
+                                Hotell
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-8 text-center ">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="#">Destination <i class="bi bi-chevron-down"></i></a>
+                                <ul class="underList">
+                                    <li>Menu One</li>
+                                    <li>Menu Two</li>
+                                    <li>Menu Three</li>
+                                </ul>
+                            </li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-2 text-end">
+                        <a href="#" class="burger_menu">
+                            <i class="bi bi-list"></i>
+                        </a>
+                        <a href="contact.html" class="call_us">
+                            <span class="tel_icon"><i class="bi bi-telephone-fill"></i></span>
+                            <span>123-489-9381</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="bannermodal d-none ">
+            <div class="centerDiv">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/Dqs6y23BGkQ?si=pQPWo3X6iHwzDemq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            </div>
+        <section id="pageBanner"
+            style="background-image: url('	https://preview.colorlib.com/theme/hotell/images/img_1.jpg');">
+            <div class="bacgroundImg">
+
+            </div>
+            <div class="bannerText">
+                <h1>Once a year go someplace you've <br> never been before.
+                </h1>
+                <button id="seeVideo">See video</button>
+            </div>
+
+        </section>
+        <section id="services">
+            <div class="container flex-column flex-lg-row">
+                <div class="service_form">
+                    <div class="row">
+                        <div class="col-lg-8 ">
+                            <div class="form ">
+                                <div><input type="text" id="search-input" placeholder="Search services"
+                                        class="form-control ">
+                                    <span id="search-input-warn" class="d-none">input is empty!</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 d-flex h-100 col-md-12 col-sm-12">
+                            <button id="search-btn">Find now</button>
+                            <button id="show-all-btn">Show All</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="container d-flex justify-content-between ">
+                <h4>
+                    Our services
+                </h4>
+
+                <div class="sort-add d-lg-flex d-md-flex">
+                    <select name="sort-by-name" id="sort-by-name" class="form-select w-100  ">
+                        <option value="" selected disabled>select filter</option>
+                        <option value="a-z">A-Z</option>
+                        <option value="z-a">Z-A</option>
+                    </select>
+                    <a href="" id="add" class="m-3 ">Add service</a>
+                </div>
+            </div>
+            <div id="modal" class="modal ">
+                <div class="modal-content container">
+                    <span class="close">&times;</span>
+                    <input type="text" id="titleInput" placeholder="Title" class="form-control ">
+                    <span id="title-warning" class="d-none">input is empty!</span>
+                    <span id="title-char-warning" class="d-none">title should be min 3 char!</span>
+
+                    <input type="text" id="contentInput" placeholder="Content" class="form-control ">
+                    <span id="content-warning" class="d-none">input is empty!</span>
+                    <span id="content-char-warning" class="d-none">content should be min 10 char!</span>
+
+                    <input type="text" id="iconInput" placeholder="Icon source" class="form-control ">
+                    <span id="icon-warning" class="d-none">input is empty!</span>
+
+                    <button id="addService">Add</button>
+                </div>
+            </div>
+
+
+            <div class="slider-container ">
+                <div class="slider-wrapper">
+                    <div class="slider-list" id="getServicesData">
+                    </div>
+                </div>
+            </div>
+
+            <div class="custom-pagination container">
+                <div class="custom-pagination-button" id="prev-btn">Prev</div>
+                <div class="custom-pagination-button" id="next-btn">Next</div>
+            </div>
+
+            <div class="d-none" id="service-modal">
+            </div>
+
+
+
+        </section>
+
+        <section id="about_hotel">
+            
+            <div class="container-fluid ">
+                <div class="row   align-items-center ">
+
+                    <div class="bg_green_about   col-lg-6 col-md-12 col-sm-12 col-12">
+                        <div class="about_img">
+                            <!-- <div class="color-div"></div> -->
+                            <img src="https://preview.colorlib.com/theme/hotell/images/about_1.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class=" col-lg-6 col-md-12 col-sm-12 p-lg-0  pt-5 ">
+                        <div class="about_desc mt-5">
+                            <h2 class="all-span">ABOUT HOTELL</h2>
+                            <p>Far far away, behind the word mountains, far from the countries Vokalia and
+                                Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
+                                right at the coast of the Semantics, a large language ocean.</p>
+                            <p>A small river named Duden flows by their place and supplies it with the necessary
+                                regelialia. It is a paradisematic country, in which roasted parts of sentences
+                                fly into your mouth.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="blogSection">
+            <div class="container">
+                <div class="row">
+                    <div class="col-4">
+                        <h2 class="sectionHeading">BLOG POSTS</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="blog_slider">
+                <div class="container" id="getBlogSlider">
+
+                </div>
+            </div>
+            <div class="blogModal d-none " id="blogModals">
+
+            </div>
+            <div class="custom-pagination container justify-content-center ">
+                <div class="custom-pagination-button" id="blog-prev-btn">Prev</div>
+                <div class="custom-pagination-button" id="blog-next-btn">Next</div>
+            </div>
+        </section>
+
+        <section id="accardion">
+            <div class="container">
+                <div class="row justify-content-between ">
+                    <div class="col-lg-3">
+                        <h2>FREQUENTLY ASKED QUESTIONS</h2>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="box">
+                            <div class="content-header">
+                                <div>
+                                    <span>Is it Free?</span>
+                                </div>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <div class="content">
+                                <div class="cont">
+                                    Far far away, behind the word mountains, far from the countries Vokalia and
+                                    Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right
+                                    at the coast of the Semantics, a large language ocean.
+                                    <br> <br>
+                                    A small river named Duden flows by their place and supplies it with the necessary
+                                    regelialia. It is a paradisematic country, in which roasted parts of sentences fly
+                                    into your mouth.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="content-header">
+                                <div>
+                                    <span>
+                                        How to install this template?</span>
+                                </div>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <div class="content">
+                                <div class="cont">
+                                    Far far away, behind the word mountains, far from the countries Vokalia and
+                                    Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right
+                                    at the coast of the Semantics, a large language ocean.
+                                    <br><br>
+                                    A small river named Duden flows by their place and supplies it with the necessary
+                                    regelialia. It is a paradisematic country, in which roasted parts of sentences fly
+                                    into your mouth.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="content-header">
+                                <div>
+                                    <span>Where can i get help?</span>
+                                </div>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <div class="content">
+                                <div class="cont">
+                                    Far far away, behind the word mountains, far from the countries Vokalia and
+                                    Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right
+                                    at the coast of the Semantics, a large language ocean.
+                                    <br><br>
+                                    A small river named Duden flows by their place and supplies it with the necessary
+                                    regelialia. It is a paradisematic country, in which roasted parts of sentences fly
+                                    into your mouth.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonial">
+            <div class="container">
+                <div class="row pb-5 ">
+                    <div class="col-lg-3">
+                        <h2 class="heading">
+                            TESTIMONIALS
+                        </h2>
+                    </div>
+                    <div class="col-lg-8 d-flex ">
+                        <p class="paragraph">A small river named Duden flows by their place and supplies it with the
+                            necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly
+                            into your mouth.</p>
+                            <button id="addEmployee" >Add Employee</button>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonialsSlider">
+                <div class="container" id="getTestSlider">
+                    <!-- <div class="cards">
+                        <div class="card_desc">
+                            <p>
+                                
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat modi ullam ea a cumque iste quae esse, quis dolor saepe eveniet consectetur, exercitationem blanditiis est nostrum? Maiores officia ducimus deserunt?
+                            </p>
+                        </div>
+                        <div class="author">
+                            <div class="d-flex align-items-center">
+                                <div class="author_img mr-3">
+                                    <img src="${employeee.imgSrc}" alt="Image" class="img-fluid">
+                                </div>
+                                <div class="justify-content-between d-flex w-100 align-items-center">
+                                    <div class="text">
+                                        <strong class="d-block">${employeee.fullName}</strong>
+                                        <span>${employeee.position}</span>
+                                    </div>
+                                    <div>
+                                        <a href="#" class="deleteBtn" data-id="${employeee.id}">Delete</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+            <div class="testModal d-none " id="testModals">
+                <div class="modalt">
+                    <div class="form">
+                        <input class="testInp" id="testFullname" type="text" placeholder="FullName" required>
+                        <span class="d-none ">input will not be send empty!</span>
+                        <input class="testInp" id="testposition" type="text" placeholder="Position" required>
+                        <span class="d-none ">input will not be send empty!</span>
+                        <input class="testInp" id="testComment" type="text" placeholder="Comment" required>
+                        <span class="d-none ">input will not be send empty!</span>
+                        <input class="testInp" id="testImgSrc" type="text" placeholder="Image Source" required>
+                        <span class="d-none ">input will not be send empty!</span>
+                        <div class="btns">
+                        <button id="addEmployeBtn" >Add Employee</button>
+                        <button id="closeModal">Close</button>
+                       </div>
+                    </div>
+                </div>
+            </div>
+            <div class="custom-pagination container justify-content-center ">
+                <div class="custom-pagination-button" id="test-prev-btn">Prev</div>
+                <div class="custom-pagination-button" id="test-next-btn">Next</div>
+            </div>
+
+
+        </section>
+
+        <section id="instagramSlider">
+            <div class="container">
+                <div class="row pb-5 ">
+                    <div class="col-lg-3">
+                        <h2 class="heading">
+                            INSTAGRAM
+                        </h2>
+                    </div>
+                    <div class="col-lg-7">
+                        <p class="paragraph">A small river named Duden flows by their place and supplies it with the
+                            necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly
+                            into your mouth.</p>
+                            
+                    </div>
+                </div>
+            </div>  
+            <div class="container-fluid p-0 ">
+                <div class="slider-wrapper  p-0 m-0 ">
+                    <div class="instaCard">
+                        <div class="overlay">
+                            <i class="bi bi-instagram"></i>
+                        </div>
+                        <div class="cardImg">
+                            <img src="https://preview.colorlib.com/theme/hotell/images/img_2.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="instaCard">
+                        <div class="overlay">
+                            <i class="bi bi-instagram"></i>
+                        </div>
+                        <div class="cardImg">
+                            <img src="https://preview.colorlib.com/theme/hotell/images/img_3.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="instaCard">
+                        <div class="overlay">
+                            <i class="bi bi-instagram"></i>
+                        </div>
+                        <div class="cardImg">
+                            <img src="https://preview.colorlib.com/theme/hotell/images/img_4.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="instaCard">
+                        <div class="overlay">
+                            <i class="bi bi-instagram"></i>
+                        </div>
+                        <div class="cardImg">
+                            <img src="https://preview.colorlib.com/theme/hotell/images/img_3.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="instaCard">
+                        <div class="overlay">
+                            <i class="bi bi-instagram"></i>
+                        </div>
+                        <div class="cardImg">
+                            <img src="https://preview.colorlib.com/theme/hotell/images/img_2.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="instaCard">
+                        <div class="overlay">
+                            <i class="bi bi-instagram"></i>
+                        </div>
+                        <div class="cardImg">
+                            <img src="https://preview.colorlib.com/theme/hotell/images/img_2.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="instaCard">
+                        <div class="overlay">
+                            <i class="bi bi-instagram"></i>
+                        </div>
+                        <div class="cardImg">
+                            <img src="https://preview.colorlib.com/theme/hotell/images/img_2.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="instaCard">
+                        <div class="overlay">
+                            <i class="bi bi-instagram"></i>
+                        </div>
+                        <div class="cardImg">
+                            <img src="https://preview.colorlib.com/theme/hotell/images/img_2.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="instaCard">
+                        <div class="overlay">
+                            <i class="bi bi-instagram"></i>
+                        </div>
+                        <div class="cardImg">
+                            <img src="https://preview.colorlib.com/theme/hotell/images/img_2.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="instaCard">
+                        <div class="overlay">
+                            <i class="bi bi-instagram"></i>
+                        </div>
+                        <div class="cardImg">
+                            <img src="https://preview.colorlib.com/theme/hotell/images/img_2.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3  col-lg-3 col-md-6 col-sm-12">
+                    <div class="footer_div">
+                        <h4>Home</h4>
+                        <ul class="footer_lists">
+                            <li>About us</li>
+                            <li>Places</li>
+                            <li>Services</li>
+                            <li>Destination</li>
+                            <li>Terms</li>
+                            <li>Privacy</li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="col-xl-3  col-lg-3 col-md-6 col-sm-12">
+                    <div class="footer_div">
+                        <h4>Practice Area</h4>
+                        <ul class="footer_lists">
+                            <li>Travel</li>
+                            <li>Popular places</li>
+                            <li>Destination</li>
+                            <li>Tour</li>
+                            <li>Family Vacation</li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="col-xl-3  col-lg-3 col-md-6 col-sm-12">
+                    <div class="footer_div">
+                        <h4>Services</h4>
+                        <ul class="footer_lists">
+                            <li>Tour</li>
+                            <li>Swimming</li>
+                            <li>Kayak</li>
+                            <li>Surfing</li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="col-xl-3  col-lg-3 col-md-6 col-sm-12">
+                    <div class="footer_div">
+                        <h4>Contact</h4>
+                        <ul class="footer_lists">
+                            <li>43 Raymouth Rd. Baltemoer, London 3910</li>
+                            <li>+1(123)-456-7890</li>
+                            <li>+1(123)-456-7890</li>
+                            <li>info@mydomain.com</li>
+                        </ul>
+
+                        <h4>Connect</h4>
+                        <ul class="icons">
+                            <li><i class="fa-brands fa-instagram"></i></li>
+                            <li><i class="fa-brands fa-twitter"></i></li>
+                            <li><i class="fa-brands fa-facebook-f"></i></li>
+                            <li><i class="fa-brands fa-linkedin-in"></i></li>
+                            <li><i class="fa-brands fa-pinterest"></i></li>
+                            <li><i class="fa-solid fa-basketball"></i></li>
+                        </ul>
+
+                    </div>
+                </div>
+
+                <div class="end_footer text-center my-5 mt-5">
+                    <span>Copyright ©2024 All rights reserved | This template is made with by <i
+                            class="fa-solid fa-heart"></i> Colorlib</span>
+                </div>
+
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/seeVideo.js"></script>
+    <script src="assets/js/accardion.js"></script>
+    <script src="assets/js/serviceSection.js"></script>
+    <script src="assets/js/blogsection.js"></script>
+    <script src="assets/js/testimonials.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,158 @@
+nav {
+    position: fixed;
+    top: 40px;
+    left: 0;
+    right: 0;
+    z-index: 99;
+
+    .logo {
+        a {
+            font-size: 24px;
+            font-weight: 700;
+            color: $white_color;
+        }
+    }
+
+    ul {
+        @media (max-width:1024px) {
+            display: none;
+        }
+
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+
+        li {
+            list-style: none;
+            position: relative;
+
+            a {
+                font-size: 14px;
+                padding: 10px 10px;
+                color: #ffffff50;
+                transition: .3s all ease;
+
+                &:hover {
+                    color: $white_color;
+                }
+            }
+&:hover{
+    .underList{
+        top: 110%;
+        visibility: visible;
+        opacity: 1;
+    }
+}
+            .underList {
+                width: 180px;
+                padding: 7px ;
+                flex-direction: column;
+                justify-content: left;
+                visibility: hidden;
+                opacity: 0;
+                top: 120%;
+                z-index: 999;
+                position: absolute;
+                text-align: left;
+                box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.1);
+                padding: 20px 0;
+                // margin-top: 20px;
+                // margin-left: 0px;
+                background: #fff;
+                transition: 0.2s 0s;
+                border-radius: 7px;
+
+                li {
+                    font-size: 14px;
+                    text-transform: none;
+                    letter-spacing: normal;
+                    transition: .2s all;
+                    color: #000;
+                    padding: 0 6px;
+                    &:hover {
+                        color: $green_color;
+                    }
+                }
+            }
+        }
+    }
+
+    .burger_menu {
+        @media (max-width:1024px) {
+            display: block;
+        }
+
+        @media (min-width:1024px) {
+            display: none;
+        }
+
+        color: $white_color;
+        font-size: 30px;
+    }
+
+    .call_us {
+        display: flex;
+        align-items: center;
+
+        @media (max-width:1024px) {
+            display: none;
+        }
+
+        .tel_icon {
+            width: 40px;
+            height: 40px;
+            @extend %center;
+            border-radius: 50%;
+            line-height: 36px;
+            background: rgba(255, 255, 255, 0.2);
+            margin-right: 10px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: .3s all ease;
+
+            &:hover {
+                background-color: transparent;
+                border-color: white;
+            }
+        }
+
+        span {
+            font-size: 14px;
+            font-weight: 400px;
+            line-height: 21px;
+            color: $white_color;
+        }
+    }
+}
+
+.navbaractive {
+    background-color: rgba(255, 255, 255, 0.664);
+    top: 0;
+    padding: 30px 0 10px 0;
+
+    .logo {
+        a {
+            color: $black_color ;
+        }
+    }
+
+    ul {
+        li {
+            a {
+                color: $black_color ;
+            }
+        }
+    }
+
+    .burger_menu {
+        i {
+            color: $black_color;
+        }
+    }
+
+    .call_us {
+        span {
+            color: $black_color ;
+        }
+    }
+}
