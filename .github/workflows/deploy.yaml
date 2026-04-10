@@ -1,4 +1,4 @@
-name: Vercel-Auto-Deployment
+name: Vercel-Final-Deploy
 on:
   push:
     branches: [ "main" ]
@@ -7,17 +7,17 @@ jobs:
   Deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: 📥 Get Code
+      - name: 📦 Kodu Götür
         uses: actions/checkout@v4
 
-      - name: 🛠️ Setup Vercel
+      - name: 🛠️ Vercel CLI Quraşdır
         run: npm install --global vercel@latest
 
-      - name: 🚀 Deployment
+      - name: 🚀 Vercel-ə Göndər
         run: |
           vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
           vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
           vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
         env:
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_TEAM_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+          VERCEL_ORG_ID: ${{ secrets.TEAM_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.PROJECT_ID }}
